@@ -1,0 +1,14 @@
+layout  {
+    pane split_direction="vertical" {
+        pane {
+            start_suspended true
+            command "just"
+            args "test"
+        }
+
+        pane {
+            command "cargo"
+            args "--config" "unstable.codegen-backend=true" "--config" "profile.dev.codegen-backend=\"cranelift\"" "watch" "-x" "shuttle run" "-w" "src" "--delay" "0"
+        }
+    }
+}
