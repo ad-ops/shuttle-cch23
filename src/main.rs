@@ -1,13 +1,12 @@
-use axum::{http::StatusCode, routing::get, Router};
+mod challenges;
+
+use axum::{routing::get, Router};
 
 #[shuttle_runtime::main]
 async fn main() -> shuttle_axum::ShuttleAxum {
     let router = Router::new()
-        .route("/", get(|| async { "Hello Worlds!" }))
-        .route(
-            "/-1/error",
-            get(|| async { StatusCode::INTERNAL_SERVER_ERROR }),
-        );
+        .route("/", get(|| async { "Hello World!" }))
+        .nest("/-1", challenges::_1::routes());
 
-    Ok(router.into())
+    Ok(router.into())  
 }

@@ -7,7 +7,7 @@ dev:
 
 # Run all Hurl tests
 test:
-    hurl tests.hurl
+    hurl tests/*.hurl --test
 
 # Deploy to Shuttle
 deploy:

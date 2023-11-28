@@ -8,7 +8,7 @@ layout  {
 
         pane {
             command "cargo"
-            args "--config" "unstable.codegen-backend=true" "--config" "profile.dev.codegen-backend=\"cranelift\"" "watch" "-x" "shuttle run" "-w" "src" "--delay" "0"
+            args "watch" "-x" "shuttle run" "-w" "src" "--delay" "0"
         }
     }
 }
