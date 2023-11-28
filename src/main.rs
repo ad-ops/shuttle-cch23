@@ -8,5 +8,5 @@ async fn main() -> shuttle_axum::ShuttleAxum {
         .route("/", get(|| async { "Hello World!" }))
         .nest("/-1", challenges::day0::routes());
 
-    Ok(router.into())  
+    Ok(router.into())
 }
