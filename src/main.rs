@@ -7,7 +7,8 @@ async fn main() -> shuttle_axum::ShuttleAxum {
     let router = Router::new()
         .route("/", get(|| async { "Hello World!" }))
         .nest("/-1", challenges::day0::routes())
-        .nest("/1", challenges::day1::routes());
+        .nest("/1", challenges::day1::routes())
+        .nest("/4", challenges::day4::routes());
 
     Ok(router.into())
 }
